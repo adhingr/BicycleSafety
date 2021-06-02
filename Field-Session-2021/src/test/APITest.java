@@ -16,9 +16,14 @@ public class APITest {
 		String access_token = tokener.get();
 		
 		System.out.println("");
+		System.out.println("Test of using the access token to segment explore search on Strava.");
+		Searcher finder = new Searcher();
+		finder.search(access_token, 39.6010, -105.5149, 40.0010, -105.1149, 0, 5);
+		
+		System.out.println("");
 		System.out.println("Test of using the access token to then grab the data from Lookout Mountain segment of Strava.");
 		DataReader reader = new DataReader();
-		reader.read(access_token);
+		reader.read(access_token, 2764729);
 	}
 	
 }

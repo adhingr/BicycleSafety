@@ -1,0 +1,11 @@
+package test;
+
+import java.util.ArrayList;
+
+public class DataObject {
+
+	ArrayList<Double> latitude = new ArrayList<Double>();
+	ArrayList<Double> longitude = new ArrayList<Double>();
+	ArrayList<Double> distance = new ArrayList<Double>();
+	ArrayList<Double> altitude = new ArrayList<Double>();
+}

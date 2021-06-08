@@ -1,0 +1,76 @@
+package test;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Iterator;
+import java.util.Scanner;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+public class DataReader {
+
+	public void read(String access_token, int segment_id) {
+		String inline = "";
+		
+		String url_fragment = "https://www.strava.com/api/v3/segments/" + segment_id + "/streams?access_token=" + access_token;
+		
+		try {
+			URL url = new URL(url_fragment);
+			
+			//Parse URL into HttpURLConnection
+			HttpURLConnection con = (HttpURLConnection)url.openConnection();
+			//Set the request method to "GET"
+			con.setRequestMethod("GET");
+			//Create the connection bridge.
+			con.connect();
+			
+			//Get the response code.
+			int response_code = con.getResponseCode();
+			System.out.println("Response Code: " + response_code);
+			
+			if(response_code != 200) {
+				throw new RuntimeException("HttpResponseCode: " + response_code);
+			} else {
+				//Use scanner to read the data from the stream.
+				Scanner sc = new Scanner(url.openStream());
+				while(sc.hasNext()) {
+					inline+=sc.nextLine();
+				}
+				
+				//Test this worked by printing the data.
+				System.out.println("\nJSON response in String format:");
+				System.out.println(inline);
+				
+				//Close the scanner.
+				sc.close();
+			}
+			
+			con.disconnect();
+			
+			//Create a parser object to read the data into a usable format.
+			JSONParser parse = new JSONParser();
+			
+			//Type caste parsed json data in json object.
+			JSONObject jobj = (JSONObject)parse.parse(inline);
+			
+			DataObject object = new DataObject();
+			
+			for(Iterator iterator = jobj.keySet().iterator(); iterator.hasNext();) {
+				String key = (String) iterator.next();
+				
+				if(key.equals("latlng")) {
+					System.out.println("Access Token: ");
+					//token = (String) jobj.get(key);
+					//System.out.println(token);
+				}
+			}
+			
+			return token;
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+}

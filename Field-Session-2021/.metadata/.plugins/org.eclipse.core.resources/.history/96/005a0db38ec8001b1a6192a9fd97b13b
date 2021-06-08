@@ -1,0 +1,19 @@
+package test;
+
+public class Segment {
+	String name;
+	String climb_category_desc;
+	
+	int id;
+	int climb_category;
+	int avg_grade;
+	
+	int start_lat;
+	int start_long;
+	
+	int end_lat;
+	int end_long;
+	
+	int elev_diff;
+	int distance;
+}

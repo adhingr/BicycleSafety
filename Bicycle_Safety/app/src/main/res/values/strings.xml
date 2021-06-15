@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Bicycle_Safety</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Bicycle Safety</string>
+    <string name="nav_header_subtitle">The Chad William Young Foundation</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_about">About</string>
+    <string name="menu_routes">Routes</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="about_description">The Chad William Young Foundation \n \n \n One of the goals of the foundation is to pursue technological developments in injury prevention in all types of cycling. In partnership with Colorado School of Mines, a Capstone Computer Science Field Session Project was launched. The goal was to enhance the algorithm that identified risky portions on cycling routes by automating it. Currently, this app serves as a template as a tangible way the algorithm could be used.</string>
+</resources>

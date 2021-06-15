@@ -127,7 +127,6 @@ public class HazardAlgorithm {
 				runAvgGrade.add((grade.get(i-1) + grade.get(i) + grade.get(i+1))/3);
 			}
 			
-			//This seems wrong, in other code is end+1????? TODO What in the world is this
 			runAvgGrade.add(runAvgGrade.get(runAvgGrade.size()-1));
 			
 			
@@ -306,8 +305,7 @@ public class HazardAlgorithm {
 					}
 				}
 			}
-			
-			//TODO Graph and plotting code here
+
 		}
 
 	public double haversine(double lat1, double lon1, double lat2, double lon2) {
@@ -363,16 +361,26 @@ public class HazardAlgorithm {
 		 */
 
 		System.out.println("");
-		System.out.println(
-				"Test of using the access token to then grab the data from Lookout Mountain segment of Strava.");
+		System.out.println("Test of using the access token to then grab the data from Lookout Mountain segment of Strava.");
 		DataReader reader = new DataReader();
 		returned_data = reader.read(access_token, search_results.get(0).getId());
 
 		HazardAlgorithm alg = new HazardAlgorithm();
 		alg.getData();
 		alg.algorithm();
-		System.out.println(alg.getHazardLevel());
+		
+		Plotter example = new Plotter(alg.getLat(),alg.getLong(), alg.getHazardLevel());
+		
+		example.createPlot();
 
+	}
+
+	public ArrayList<Double> getLat() {
+		return Lat;
+	}
+
+	public ArrayList<Double> getLong() {
+		return Long;
 	}
 
 }

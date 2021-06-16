@@ -1,4 +1,0 @@
-INDEX VERSION 1.131+C:\Users\jareds\Documents\Field-Session-2021\.metadata\.plugins\org.eclipse.jdt.core
-481179350.index
-587036364.index
-2196199803.index

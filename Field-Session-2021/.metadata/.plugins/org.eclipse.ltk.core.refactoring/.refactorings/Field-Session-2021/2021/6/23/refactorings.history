@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;test.Search&apos; to &apos;Searcher&apos;&#x0D;&#x0A;- Original project: &apos;Field-Session-2021&apos;&#x0D;&#x0A;- Original element: &apos;test.Search&apos;&#x0D;&#x0A;- Renamed element: &apos;test.Searcher&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Search&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;test{Search.java[Search" matchStrategy="1" name="Searcher" qualified="false" references="true" similarDeclarations="false" stamp="1622656347474" textual="false" version="1.0"/>
-</session>
